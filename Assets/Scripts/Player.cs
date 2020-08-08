@@ -5,8 +5,8 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class Player : MonoBehaviour
 {
-    [Tooltip("м/с")][SerializeField] float xSpeed = 4f;
-    [Tooltip("м/с")] [SerializeField] float ySpeed = 4f;
+    [Tooltip("м/с")][SerializeField] float Speed = 4f;
+    
 
     [SerializeField] float XClamp = 20f;
     [SerializeField] float YClamp = 8.5f;
@@ -20,18 +20,27 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        MoveShip();
+        RotateShip();
+    }
+    void MoveShip()
+    {
         float xMove = CrossPlatformInputManager.GetAxis("Horizontal");
         float yMove = CrossPlatformInputManager.GetAxis("Vertical");
-        float xOffset = xMove * xSpeed * Time.deltaTime;
-        float yOffset = yMove * ySpeed * Time.deltaTime;
+        float xOffset = xMove * Speed * Time.deltaTime;
+        float yOffset = yMove * Speed * Time.deltaTime;
         float newXPos = transform.localPosition.x + xOffset;
         float clampXPos = Mathf.Clamp(newXPos, -XClamp, XClamp);
 
         float newYPos = transform.localPosition.y + yOffset;
         float clampYPos = Mathf.Clamp(newYPos, -YClamp, YClamp);
 
-        transform.localPosition = new Vector3(clampXPos, clampYPos,transform.localPosition.z);
+        transform.localPosition = new Vector3(clampXPos, clampYPos, transform.localPosition.z);
 
-
+    }
+    void RotateShip()
+    {
+        transform.localRotation = Quaternion.Euler(-30,30,0);
     }
 }
