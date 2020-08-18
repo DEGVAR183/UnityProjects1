@@ -8,14 +8,14 @@ public class Player : MonoBehaviour
     [Tooltip("м/с")][SerializeField] float Speed = 4f;
     
 
-    [SerializeField] float XClamp = 30f;
-    [SerializeField] float YClamp = 10f;
-    [SerializeField] float xRotFactor = -1.8f;
-    [SerializeField] float yRotFactor = 1.5f;
-    [SerializeField] float zRotFactor = -1.5f;
-    [SerializeField] float xMoveRot = -10f;
-    [SerializeField] float yMoveRot = 10f;
-    [SerializeField] float zMoveRot = 10f;
+    [SerializeField] float XClamp = 40f;
+    [SerializeField] float YClamp = 15f;
+    [SerializeField] float xRotFactor = -1.34f;
+    [SerializeField] float yRotFactor = 1.25f;
+    [SerializeField] float zRotFactor = -0.5f;
+    [SerializeField] float xMoveRot = -20f;
+    [SerializeField] float yMoveRot = 20f;
+    [SerializeField] float zMoveRot = -20f;
 
     float xMove, yMove;
     // Start is called before the first frame update
@@ -51,6 +51,6 @@ public class Player : MonoBehaviour
         float xRot = transform.localPosition.y * xRotFactor + yMove * xMoveRot;
         float yRot = transform.localPosition.x * yRotFactor + xMove * yMoveRot;
         float zRot = xMove * zMoveRot;
-        transform.localRotation = Quaternion.Euler(xRot,yRot,zRot);
+        transform.localRotation = Quaternion.Euler(xRot, yRot, zRot);
     }
 }
