@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class splashScreen : MonoBehaviour
+
+public class Music : MonoBehaviour
 {
     // Start is called before the first frame update
     void Awake()
@@ -12,12 +12,9 @@ public class splashScreen : MonoBehaviour
     }
     void Start()
     {
-        Invoke("FirstLevelLoad", 2f);
+        
     }
 
     // Update is called once per frame
-    void FirstLevelLoad()
-    {
-        SceneManager.LoadScene(1);
-    }
+    
 }
