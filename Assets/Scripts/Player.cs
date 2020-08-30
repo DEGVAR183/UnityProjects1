@@ -31,6 +31,14 @@ public class Player : MonoBehaviour
         MoveShip();
         RotateShip();
     }
+    void OnCollisionEnter(Collision collision)
+    {
+        print("Hit Collision");    
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        print("Hit Trigger");
+    }
     void MoveShip()
     {
         xMove = CrossPlatformInputManager.GetAxis("Horizontal");
