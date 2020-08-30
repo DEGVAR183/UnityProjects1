@@ -3,42 +3,46 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class Player : MonoBehaviour
+public class PlayerControl : MonoBehaviour
+
 {
+    [Header("General")]
     [Tooltip("м/с")][SerializeField] float Speed = 4f;
     
-
     [SerializeField] float XClamp = 40f;
     [SerializeField] float YClamp = 15f;
+
+    [Header("RotFactor")]
     [SerializeField] float xRotFactor = -1.34f;
     [SerializeField] float yRotFactor = 1.25f;
     [SerializeField] float zRotFactor = -0.5f;
+    [Header("RotationOnMove")]
     [SerializeField] float xMoveRot = -20f;
     [SerializeField] float yMoveRot = 20f;
     [SerializeField] float zMoveRot = -20f;
 
+    bool isControlEnabled = true;
     float xMove, yMove;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+  
 
     // Update is called once per frame
     void Update()
     {
+        if (isControlEnabled)
+        {
+            MoveShip();
+            RotateShip();
+        }
+    }
 
-        MoveShip();
-        RotateShip();
-    }
-    void OnCollisionEnter(Collision collision)
+    void OnPlayerDeath()
     {
-        print("Hit Collision");    
+        print("Control OFF");
+        isControlEnabled = false;
     }
-    void OnTriggerEnter(Collider other)
-    {
-        print("Hit Trigger");
-    }
+    
+   
     void MoveShip()
     {
         xMove = CrossPlatformInputManager.GetAxis("Horizontal");
