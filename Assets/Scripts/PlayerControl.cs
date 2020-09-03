@@ -11,6 +11,7 @@ public class PlayerControl : MonoBehaviour
     
     [SerializeField] float XClamp = 40f;
     [SerializeField] float YClamp = 15f;
+    [SerializeField] GameObject[] guns;
 
     [Header("RotFactor")]
     [SerializeField] float xRotFactor = -1.34f;
@@ -64,5 +65,31 @@ public class PlayerControl : MonoBehaviour
         float yRot = transform.localPosition.x * yRotFactor + xMove * yMoveRot;
         float zRot = xMove * zMoveRot;
         transform.localRotation = Quaternion.Euler(xRot, yRot, zRot);
+    }
+    void FireGuns()
+    {
+        if(CrossPlatformInputManager.GetButton("Fire"))
+        {
+            ActiveGuns();  
+        }
+        else
+        {
+            DeactiveGuns();
+        }
+    }
+    void ActiveGuns()
+    {
+        foreach(GameObject gun in guns)
+        {
+            gun.SetActive(true);
+        }
+    }
+    void DeactiveGuns()
+    {
+        foreach (GameObject gun in guns)
+        {
+            gun.SetActive(false);
+        }
+
     }
 }

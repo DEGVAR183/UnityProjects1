@@ -292,6 +292,7 @@ MonoBehaviour:
   deathFX: {fileID: 833899311153533749, guid: 43e92026edb34a04db56cafe94bb67de, type: 3}
   parent: {fileID: 1005856028}
   scoreToAdd: 5
+  hits: 5
 --- !u!1 &186269810
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,6 +836,12 @@ Transform:
   m_Father: {fileID: 935821313}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &798340637 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8099714246549098913, guid: 78587d72989a8a24a9e06720085c3077,
+    type: 3}
+  m_PrefabInstance: {fileID: 8099714245583288876}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &810879538 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1238095480485456, guid: bf374732b0ea2c34daa340dc2de7f746,
@@ -862,6 +869,7 @@ MonoBehaviour:
   deathFX: {fileID: 833899311153533749, guid: 43e92026edb34a04db56cafe94bb67de, type: 3}
   parent: {fileID: 1005856028}
   scoreToAdd: 5
+  hits: 5
 --- !u!1 &898323298 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1469320689751860, guid: a19af03b7c64771489f010af565cc649,
@@ -883,6 +891,7 @@ MonoBehaviour:
   deathFX: {fileID: 833899311153533749, guid: 43e92026edb34a04db56cafe94bb67de, type: 3}
   parent: {fileID: 1005856028}
   scoreToAdd: 10
+  hits: 7
 --- !u!1 &935821311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,6 +1014,12 @@ Transform:
   m_Father: {fileID: 935821313}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1126483080 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9210837261853465019, guid: 78587d72989a8a24a9e06720085c3077,
+    type: 3}
+  m_PrefabInstance: {fileID: 8099714245583288876}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1359800543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1393,6 +1408,7 @@ MonoBehaviour:
   deathFX: {fileID: 833899311153533749, guid: 43e92026edb34a04db56cafe94bb67de, type: 3}
   parent: {fileID: 1005856028}
   scoreToAdd: 5
+  hits: 5
 --- !u!1 &1594659453 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1469320689751860, guid: a19af03b7c64771489f010af565cc649,
@@ -1414,6 +1430,7 @@ MonoBehaviour:
   deathFX: {fileID: 833899311153533749, guid: 43e92026edb34a04db56cafe94bb67de, type: 3}
   parent: {fileID: 1005856028}
   scoreToAdd: 10
+  hits: 7
 --- !u!1 &1618202684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,6 +1488,7 @@ MonoBehaviour:
   deathFX: {fileID: 833899311153533749, guid: 43e92026edb34a04db56cafe94bb67de, type: 3}
   parent: {fileID: 1005856028}
   scoreToAdd: 5
+  hits: 5
 --- !u!4 &1695938260 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4248845843280306, guid: a19af03b7c64771489f010af565cc649,
@@ -1498,6 +1516,7 @@ MonoBehaviour:
   deathFX: {fileID: 833899311153533749, guid: 43e92026edb34a04db56cafe94bb67de, type: 3}
   parent: {fileID: 1005856028}
   scoreToAdd: 5
+  hits: 5
 --- !u!1001 &1762457174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1613,6 +1632,7 @@ MonoBehaviour:
   deathFX: {fileID: 833899311153533749, guid: 43e92026edb34a04db56cafe94bb67de, type: 3}
   parent: {fileID: 1005856028}
   scoreToAdd: 10
+  hits: 7
 --- !u!1001 &1899972975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1826,6 +1846,7 @@ MonoBehaviour:
   deathFX: {fileID: 833899311153533749, guid: 43e92026edb34a04db56cafe94bb67de, type: 3}
   parent: {fileID: 1005856028}
   scoreToAdd: 10
+  hits: 7
 --- !u!1001 &2009358191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1905,6 +1926,7 @@ MonoBehaviour:
   deathFX: {fileID: 833899311153533749, guid: 43e92026edb34a04db56cafe94bb67de, type: 3}
   parent: {fileID: 1005856028}
   scoreToAdd: 5
+  hits: 5
 --- !u!1 &2065003591
 GameObject:
   m_ObjectHideFlags: 0
@@ -2168,6 +2190,21 @@ PrefabInstance:
       propertyPath: m_MaxParticleSize
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8099714245583288879, guid: 78587d72989a8a24a9e06720085c3077,
+        type: 3}
+      propertyPath: guns.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099714245583288879, guid: 78587d72989a8a24a9e06720085c3077,
+        type: 3}
+      propertyPath: guns.Array.data[0]
+      value: 
+      objectReference: {fileID: 798340637}
+    - target: {fileID: 8099714245583288879, guid: 78587d72989a8a24a9e06720085c3077,
+        type: 3}
+      propertyPath: guns.Array.data[1]
+      value: 
+      objectReference: {fileID: 1126483080}
     - target: {fileID: 8099714245583288884, guid: 78587d72989a8a24a9e06720085c3077,
         type: 3}
       propertyPath: explosionFX
@@ -2181,7 +2218,12 @@ PrefabInstance:
     - target: {fileID: 8099714246549098913, guid: 78587d72989a8a24a9e06720085c3077,
         type: 3}
       propertyPath: m_Name
-      value: BulletsRight
+      value: GunRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099714246549098913, guid: 78587d72989a8a24a9e06720085c3077,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8099714246549098940, guid: 78587d72989a8a24a9e06720085c3077,
         type: 3}
@@ -2236,7 +2278,12 @@ PrefabInstance:
     - target: {fileID: 9210837261853465019, guid: 78587d72989a8a24a9e06720085c3077,
         type: 3}
       propertyPath: m_Name
-      value: BulletsLeft
+      value: GunLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 9210837261853465019, guid: 78587d72989a8a24a9e06720085c3077,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78587d72989a8a24a9e06720085c3077, type: 3}
