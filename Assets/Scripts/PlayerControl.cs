@@ -34,6 +34,7 @@ public class PlayerControl : MonoBehaviour
         {
             MoveShip();
             RotateShip();
+            
         }
     }
 
