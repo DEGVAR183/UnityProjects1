@@ -1,14 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerControl : MonoBehaviour
 
 {
     [Header("General")]
-    [Tooltip("м/с")][SerializeField] float Speed = 4f;
-    
+    [Tooltip("м/с")] [SerializeField] float Speed = 4f;
+
     [SerializeField] float XClamp = 40f;
     [SerializeField] float YClamp = 15f;
     [SerializeField] GameObject[] guns;
@@ -25,7 +23,7 @@ public class PlayerControl : MonoBehaviour
     bool isControlEnabled = true;
     float xMove, yMove;
     // Start is called before the first frame update
-  
+
 
     // Update is called once per frame
     void Update()
@@ -34,7 +32,7 @@ public class PlayerControl : MonoBehaviour
         {
             MoveShip();
             RotateShip();
-            
+
         }
     }
 
@@ -43,8 +41,8 @@ public class PlayerControl : MonoBehaviour
         print("Control OFF");
         isControlEnabled = false;
     }
-    
-   
+
+
     void MoveShip()
     {
         xMove = CrossPlatformInputManager.GetAxis("Horizontal");
@@ -69,27 +67,29 @@ public class PlayerControl : MonoBehaviour
     }
     void FireGuns()
     {
-        if(CrossPlatformInputManager.GetButton("Fire"))
+        if (CrossPlatformInputManager.GetButton("Fire1"))
+
         {
-            ActiveGuns();  
+            ActiveGuns();
         }
         else
         {
             DeactiveGuns();
         }
+
     }
     void ActiveGuns()
     {
-        foreach(GameObject gun in guns)
+        foreach (GameObject gun in guns)
         {
-            gun.SetActive(true);
+            gun.GetComponent<ParticleSystem>().enableEmission = true;
         }
     }
     void DeactiveGuns()
     {
         foreach (GameObject gun in guns)
         {
-            gun.SetActive(false);
+            gun.GetComponent<ParticleSystem>().enableEmission = false;
         }
 
     }
